@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Class 2: Attribute Binging and Basic Events </title>
 
-  <title>Document</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body{
+      display: grid;
+      place-items: center;
+    }
+
+    .text-red {
+      color: red;
+    }
+
+    .text-green {
+      color: green;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <p>
-      <input type="text" v-model="greeting">
-    </p>
-    <p>
-      {{ greeting }} ({{ greeting.length }})
-    </p>
+    <button :class="active ? 'text-red' : 'text-green'" @click="toggle">Click Me</button>
   </div>
   <script>
     Vue.createApp({
       data() {
         return {
-          greeting: 'What is Up'
+          active: false
         };
       },
 
-      mounted() {
-        setTimeout(()=>{
-          this.greeting = 'Changed';
-        }, 3000);
+      methods: {
+        toggle() {
+          this.active = !this.active;
+        }
       }
     }).mount('#app');
   </script>
