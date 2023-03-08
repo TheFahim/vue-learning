@@ -2,7 +2,7 @@
 <html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8">
-  <title>Class 4: Your First Compenent </title>
+  <title>Class 5: One Vue Compenent Per File </title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -11,22 +11,11 @@
     <app-button>Submit</app-button>
     <app-button>Haha</app-button>
   </div>
-  <script>
+  <script type="module">
+    import AppButton from "./js/components/AppButton.js";
     let app = {
       components: {
-        'app-button': {
-          template: `
-            <button class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-2 disabled:cursor-not-allowed" :disabled="processing">
-              <slot />
-            </button>
-          `,
-
-          data() {
-            return {
-              processing: true,
-            };
-          }
-        },
+        'app-button': AppButton
       }
     };
 
