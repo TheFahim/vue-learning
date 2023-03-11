@@ -10,9 +10,8 @@ export default {
         </h2>
 
         <assignment-tags
+          v-model:currentTag = "currentTag"
           :initial-tags="assignments.map(a => a.tag)"
-          :current-tag="currentTag"
-          @change="currentTag = $event"
         />
 
         <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
@@ -40,7 +39,7 @@ export default {
       if (this.currentTag === 'all') {
         return this.assignments;
       }
-      return this.assignments.filter(a=>a.tag === this.currentTag);
+      return this.assignments.filter(a => a.tag === this.currentTag);
     },
 
 
