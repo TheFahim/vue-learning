@@ -1,28 +1,18 @@
 <script setup>
+import TabbableTextarea from '../components/TabbableTextarea.vue';
+import { ref } from 'vue';
 
-import { useStorage } from "../composables/useStorage"
+let comment = ref('test value');
 
-let food = useStorage('food')
-
-let age = useStorage('age');
-
-let obj = useStorage('obj', {one: 'one'});
-
-setTimeout(() =>{
-  obj.value.one = 'Changed';
-},3000);
-
+setTimeout(()=>{
+  comment.value = 'changed';
+},5000);
 </script>
 
 <template>
   <main>
-    <p>
-       what is Your Favorite Food? <input type="text" v-model="food">
-    </p>
-
-    <p>
-       how old are you? <input type="text" v-model="age">
-    </p>
-
+    <form>
+      <TabbableTextarea v-model="comment" style="width: 100%; height: 300px;" />
+    </form>
   </main>
 </template>
