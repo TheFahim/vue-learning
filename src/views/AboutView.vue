@@ -1,15 +1,12 @@
 <script setup>
-
-import { useFlash } from '../composables/useFlash';
-
-let {flash} = useFlash();
+import { counter } from '../stores/counterStore';
 
 </script>
 
 <template>
   <div>
     <p>
-      <button @click="flash('Yay','It Works on the About Page!','info')"> Click Me</button>
+      About Page. The Current Counter Page is {{ counter.count }}
     </p>
   </div>
 </template>
