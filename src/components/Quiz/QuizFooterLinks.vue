@@ -1,13 +1,13 @@
 <script setup>
-import { inject } from 'vue';
+import { state } from '../../stores/quizStore';
 
-let quiz = inject('quiz');
 
 </script>
 
 
 <template>
-  <h5>{{ quiz.name }}</h5>
+  <h5>{{ state.name }}</h5>
+  <button @click="state.name = 'A New Quiz Name'">Chanage Quiz Name</button>
   <div>
     <a href="#" style="padding-right: 2em;">Hello</a>
     <a href="#">Hi</a>
