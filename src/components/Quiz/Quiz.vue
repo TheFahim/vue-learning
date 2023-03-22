@@ -4,22 +4,18 @@
   import QuizHeader from './QuizHeader.vue';
   import QuizQuestion from './QuizQuestion.vue';
   import QuizFooter from './QuizFooter.vue';
-  import { provide, ref } from 'vue';
+import { provide } from 'vue';
 
-  let name = ref('John Doe')
-
-  provide('name', {
-    name,
-    changeName: ()=> name.value = "Changed"
-  });
-
-  defineProps({
+  let props = defineProps({
     quiz: Object
   });
+
+  provide('quiz', props.quiz);
+
 </script>
 
 <template>
   <QuizHeader />
   <QuizQuestion />
-  <QuizFooter :quiz="quiz"/>
+  <QuizFooter />
 </template>
