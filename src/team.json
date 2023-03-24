@@ -11,29 +11,24 @@
 
     {
       "id": "2",
-      "name": "sarah Doe",
-      "email": "Sarah@doe.com",
+      "name": "Sarah Doe",
+      "email": "sarah@doe.com",
       "status": "Active"
     },
 
     {
       "id": "3",
-      "name": "steve Doe",
-      "email": "Steve@doe.com",
+      "name": "Steve Doe",
+      "email": "steve@doe.com",
       "status": "Active"
     },
     {
       "id": "4",
-      "name": "jen Doe",
-      "email": "Jen@doe.com",
-      "status": "Active"
-    },
-    {
-      "id": "5",
-      "name": "joe Doe",
-      "email": "Joe@doe.com",
+      "name": "Jen Doe",
+      "email": "jen@doe.com",
       "status": "Active"
     }
+
   ]
 
 }
